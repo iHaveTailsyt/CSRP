@@ -3,11 +3,8 @@ import Image from 'next/image';
 import { departments } from '@/data/departments';
 import { X } from 'lucide-react';
 
-type Props = {
-  params: { slug: string };
-};
-
-export default async function DepartmentDetail({ params }: Props) {
+export default async function DepartmentDetail({ params }: { params: { slug: string } }) {
+  // Awaiting params (no need for Promise chaining here, just async logic)
   const dept = departments.find((d) => d.slug === params.slug);
 
   if (!dept) return notFound();
