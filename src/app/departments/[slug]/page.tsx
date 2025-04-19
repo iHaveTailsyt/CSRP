@@ -13,12 +13,12 @@ type Department = {
 };
 
 // Use the async function properly to handle params and dynamic content
-export default async function DepartmentDetail({ params }: { params: { slug: string } }) {
+export default async function DepartmentDetail({ params }: { params: Promise<{ slug: string }> }) {
   // Destructure params.slug
-  const slug = params.slug;
+  const { slug } = await params;
 
   // Find the department that matches the slug
-  const dept: Department | undefined = departments.find((d) => d.slug === slug);
+  const dept = departments.find((d) => d.slug === slug);
 
   // If no department is found, return 404
   if (!dept) return notFound();
