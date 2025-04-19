@@ -41,7 +41,7 @@ export default function AgreementGate({ children }: { children: React.ReactNode 
             >
               <h1 className="text-3xl font-bold mb-4 text-center">📜 Server Rules Agreement</h1>
               <p className="text-gray-300 mb-4 text-center">
-                Please review and accept the rules before accessing the site.
+                Please review and accept the rules before accessing the site
               </p>
 
               <ol className="list-decimal list-inside space-y-3 text-gray-200 text-sm max-h-96 overflow-y-auto">
