@@ -12,9 +12,12 @@ type Department = {
   slug: string;
 };
 
-export default function DepartmentDetail({ params }: { params: { slug: string } }) {
-  // Find the department by slug
-  const dept: Department | undefined = departments.find((d) => d.slug === params.slug);
+// Using async/await to handle dynamic params correctly in Next.js 13+
+export default async function DepartmentDetail({ params }: { params: { slug: string } }) {
+  const slug = params.slug;  // Get the slug param
+
+  // Find the department that matches the slug
+  const dept: Department | undefined = departments.find((d) => d.slug === slug);
 
   if (!dept) return notFound(); // If department is not found, show 404
 
@@ -41,7 +44,8 @@ export default function DepartmentDetail({ params }: { params: { slug: string } 
         <h1 className="text-4xl font-bold mb-4">{dept.name}</h1>
         <p className="text-lg text-gray-300 mb-6">{dept.description}</p>
 
-        {dept.gallery?.length > 0 && (
+        {/* Gallery Section */}
+        {dept.gallery && dept.gallery.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {dept.gallery.map((img, i) => (
               <Image
@@ -56,6 +60,7 @@ export default function DepartmentDetail({ params }: { params: { slug: string } 
           </div>
         )}
 
+        {/* Discord link */}
         {dept.discord && (
           <a
             href={dept.discord}
