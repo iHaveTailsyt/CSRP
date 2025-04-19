@@ -36,12 +36,20 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="https://discord.gg/https://discord.gg/fjYjs3j5Rp"
+            href="https://discord.gg/fjYjs3j5Rp"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-4 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded text-white"
           >
             Join Discord
+          </a>
+          <a
+            href="https://ugc.production.linktr.ee/24fbb3ec-feb2-42a1-b8d4-d8fdaba56f9e_CHP-LAPD-LASO-CODES.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded text-white"
+          >
+            All the 10 codes we use
           </a>
         </nav>
 
