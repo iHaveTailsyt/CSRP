@@ -1,0 +1,51 @@
+export const departments = [
+    {
+      slug: 'lapd',
+      name: '👮 Law Enforcement (LAPD)',
+      description: 'Uphold the law, patrol the streets, and protect civilians.',
+      image: '/images/departments/lapd.webp',
+      gallery: ['/images/departments/lapd2.webp', '/images/departments/lapd3.webp'],
+      discord: 'https://discord.gg/fjYjs3j5Rp',
+    },
+    {
+      slug: 'lafd',
+      name: '🚒 Fire & Rescue (LAFD)',
+      description: 'Respond to emergencies and save lives during disasters.',
+      image: '/images/departments/fire.webp',
+      gallery: ['/images/departments/fire2.webp', '/images/departments/fire3.webp'],
+      discord: 'https://discord.gg/fjYjs3j5Rp',
+    },
+    {
+      slug: 'dot',
+      name: '🛠️ Department of Transportation (CALTRANS)',
+      description: 'Maintain roads, clear wrecks, and ensure safe travel.',
+      image: '/images/departments/dot.webp',
+      gallery: [],
+      discord: 'https://discord.gg/fjYjs3j5Rp',
+    },
+    {
+      slug: 'civ',
+      name: '🧑‍🤝‍🧑 Civilian Operations',
+      description: 'Live your life freely as a citizen of California.',
+      image: '/images/departments/civ.webp',
+      gallery: [],
+      discord: 'https://discord.gg/fjYjs3j5Rp',
+    },
+    {
+      slug: 'chp',
+      name: '🚓 California Highway Patrol (CHP)',
+      description: 'Enforce highway laws, assist in traffic incidents, and protect our state roads.',
+      image: '/images/departments/chp.webp',
+      gallery: [],
+      discord: 'https://discord.gg/fjYjs3j5Rp',
+    },
+    {
+      slug: 'staff',
+      name: '🛡️ Staff',
+      description: 'Enforce in-game and Discord rules. Help our community and ensure CSRP is safe.',
+      image: '/images/departments/staff.webp',
+      gallery: [],
+      discord: 'https://discord.gg/fjYjs3j5Rp',
+    },
+  ];
+  
