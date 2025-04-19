@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { departments } from '@/data/departments';
+import { departments } from '@/data/departments'; // Assuming departments is from a separate file
 import { X } from 'lucide-react';
 
 type Department = {
@@ -12,14 +12,16 @@ type Department = {
   slug: string;
 };
 
-// Using async/await to handle dynamic params correctly in Next.js 13+
+// Use the async function properly to handle params and dynamic content
 export default async function DepartmentDetail({ params }: { params: { slug: string } }) {
-  const slug = params.slug;  // Get the slug param
+  // Destructure params.slug
+  const slug = params.slug;
 
   // Find the department that matches the slug
   const dept: Department | undefined = departments.find((d) => d.slug === slug);
 
-  if (!dept) return notFound(); // If department is not found, show 404
+  // If no department is found, return 404
+  if (!dept) return notFound();
 
   return (
     <div className="min-h-screen bg-gray-950 text-white z-50 px-4 py-6">
@@ -75,3 +77,10 @@ export default async function DepartmentDetail({ params }: { params: { slug: str
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  return departments.map((dept) => ({
+    slug: dept.slug,
+  }));
+}
+
