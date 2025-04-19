@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import AgreementGate from '@/components/AgreementGate';
 
 export const metadata: Metadata = {
-  title: 'ER:LC RP Server',
+  title: 'California State Roleplay',
   description: 'Join the most immersive ER:LC roleplay server!',
 };
 
