@@ -3,11 +3,20 @@ import Image from 'next/image';
 import { departments } from '@/data/departments';
 import { X } from 'lucide-react';
 
-export default async function DepartmentDetail({ params }: { params: { slug: string } }) {
-  // Awaiting params (no need for Promise chaining here, just async logic)
-  const dept = departments.find((d) => d.slug === params.slug);
+type Department = {
+  name: string;
+  description: string;
+  image: string;
+  gallery?: string[];
+  discord?: string;
+  slug: string;
+};
 
-  if (!dept) return notFound();
+export default function DepartmentDetail({ params }: { params: { slug: string } }) {
+  // Find the department by slug
+  const dept: Department | undefined = departments.find((d) => d.slug === params.slug);
+
+  if (!dept) return notFound(); // If department is not found, show 404
 
   return (
     <div className="min-h-screen bg-gray-950 text-white z-50 px-4 py-6">
