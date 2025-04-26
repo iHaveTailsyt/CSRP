@@ -1,7 +1,6 @@
 import '@/styles/globals.css';
-import type { Metadata } from 'next';
-import Header from '@/components/Header';
-import AgreementGate from '@/components/AgreementGate';
+import { Metadata } from 'next';
+import ClientLayout from './client-layout';
 
 export const metadata: Metadata = {
   title: 'California State Roleplay',
@@ -16,10 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AgreementGate>
-          <Header />
+        <ClientLayout>
           {children}
-        </AgreementGate>
+        </ClientLayout>
       </body>
     </html>
   );
