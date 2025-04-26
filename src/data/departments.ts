@@ -4,16 +4,19 @@ export const departments = [
       name: '👮 Law Enforcement (LAPD)',
       description: 'Uphold the law, patrol the streets, and protect civilians.',
       image: '/images/departments/lapd.webp',
-      gallery: ['/images/departments/lapd2.webp', '/images/departments/lapd3.webp'],
-      discord: 'https://discord.gg/fjYjs3j5Rp',
+      gallery: [],
+      discord: 'https://discord.gg/GXyuawWjkt',
+      divisions: ["SWAT", "Traffic", "K9", "CID"],
+      status: "recruiting"
     },
     {
       slug: 'lafd',
       name: '🚒 Fire & Rescue (LAFD)',
       description: 'Respond to emergencies and save lives during disasters.',
       image: '/images/departments/fire.webp',
-      gallery: ['/images/departments/fire2.webp', '/images/departments/fire3.webp'],
-      discord: 'https://discord.gg/fjYjs3j5Rp',
+      gallery: [],
+      discord: 'https://discord.gg/k2hw82Ae3b',
+      status: "recruiting"
     },
     {
       slug: 'dot',
@@ -22,6 +25,7 @@ export const departments = [
       image: '/images/departments/dot.webp',
       gallery: [],
       discord: 'https://discord.gg/fjYjs3j5Rp',
+      status: "recruiting"
     },
     {
       slug: 'civ',
@@ -30,6 +34,7 @@ export const departments = [
       image: '/images/departments/civ.webp',
       gallery: [],
       discord: 'https://discord.gg/fjYjs3j5Rp',
+      status: "recruiting"
     },
     {
       slug: 'chp',
@@ -37,7 +42,9 @@ export const departments = [
       description: 'Enforce highway laws, assist in traffic incidents, and protect our state roads.',
       image: '/images/departments/chp.webp',
       gallery: [],
-      discord: 'https://discord.gg/fjYjs3j5Rp',
+      discord: 'https://discord.gg/CPm35RVvMy',
+      divisions: ["SWAT", "Traffic", "K9", "CID"],
+      status: "hold"
     },
     {
       slug: 'staff',
@@ -46,6 +53,7 @@ export const departments = [
       image: '/images/departments/staff.webp',
       gallery: [],
       discord: 'https://discord.gg/fjYjs3j5Rp',
+      status: "recruiting"
     },
   ];
   

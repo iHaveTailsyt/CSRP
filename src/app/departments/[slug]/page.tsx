@@ -3,15 +3,6 @@ import Image from 'next/image';
 import { departments } from '@/data/departments'; // Assuming departments is from a separate file
 import { X } from 'lucide-react';
 
-type Department = {
-  name: string;
-  description: string;
-  image: string;
-  gallery?: string[];
-  discord?: string;
-  slug: string;
-};
-
 // Use the async function properly to handle params and dynamic content
 export default async function DepartmentDetail({ params }: { params: Promise<{ slug: string }> }) {
   // Destructure params.slug
@@ -33,6 +24,36 @@ export default async function DepartmentDetail({ params }: { params: Promise<{ s
       >
         <X className="w-8 h-8" />
       </a>
+
+      {/* Centered Status Badge + Discord Button */}
+      <div className="flex flex-wrap justify-center items-center gap-4 mb-6">
+        {/* Status Badge */}
+        {dept.status && (
+          <span
+            className={`inline-block px-4 py-2 rounded-full text-sm font-semibold
+              ${dept.status === 'recruiting' ? 'bg-green-600' : ''}
+              ${dept.status === 'full' ? 'bg-red-600' : ''}
+              ${dept.status === 'hold' ? 'bg-yellow-500 text-black' : ''}
+            `}
+          >
+            {dept.status === 'recruiting' && '🟢 Recruiting'}
+            {dept.status === 'full' && '🔴 Full'}
+            {dept.status === 'hold' && '🟡 On Hold'}
+          </span>
+        )}
+
+        {/* Discord link */}
+        {dept.discord && (
+          <a
+            href={dept.discord}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-full transition"
+          >
+            Join {dept.name.split('(')[1]?.replace(')', '') || 'Discord'}
+          </a>
+        )}
+      </div>
 
       <div className="max-w-4xl mx-auto pt-12">
         <Image
@@ -60,18 +81,6 @@ export default async function DepartmentDetail({ params }: { params: Promise<{ s
               />
             ))}
           </div>
-        )}
-
-        {/* Discord link */}
-        {dept.discord && (
-          <a
-            href={dept.discord}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition"
-          >
-            Join {dept.name.split('(')[1]?.replace(')', '') || 'Discord'}
-          </a>
         )}
       </div>
     </div>
